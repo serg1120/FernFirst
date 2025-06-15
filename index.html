@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fern First - Florida Insurance When Others Say No</title>
+    <meta name="description" content="Dropped by your insurance carrier? Can't find coverage? Fern First specializes in helping Florida residents get the insurance they need.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo-placeholder.svg" alt="Fern First" class="logo-img">
+                    <span class="logo-text">Fern First</span>
+                </div>
+                
+                <!-- Language Toggle -->
+                <div class="language-toggle">
+                    <button class="lang-btn active" data-lang="en">
+                        <img src="https://flagcdn.com/24x18/us.png" alt="English"> EN
+                    </button>
+                    <button class="lang-btn" data-lang="es">
+                        <img src="https://flagcdn.com/24x18/es.png" alt="Spanish"> ES
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 data-en="Been Dropped by Your Insurance Company?" data-es="¿Su compañía de seguros lo canceló?">
+                        Been Dropped by Your Insurance Company?
+                    </h1>
+                    <h2 data-en="We Specialize in Hard-to-Place Florida Insurance" data-es="Nos especializamos en seguros difíciles de conseguir en Florida">
+                        We Specialize in Hard-to-Place Florida Insurance
+                    </h2>
+                    
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-en="Coverage When Others Say No" data-es="Cobertura cuando otros dicen que no">Coverage When Others Say No</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clock"></i>
+                            <span data-en="Same Day Quotes Available" data-es="Cotizaciones el mismo día disponibles">Same Day Quotes Available</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-handshake"></i>
+                            <span data-en="15+ Years Florida Experience" data-es="15+ años de experiencia en Florida">15+ Years Florida Experience</span>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="tel:555-FERN-INS" class="cta-primary">
+                            <i class="fas fa-phone"></i>
+                            <span data-en="Call Now: (555) FERN-INS" data-es="Llame ahora: (555) FERN-INS">Call Now: (555) FERN-INS</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Instant Quote Widget -->
+                <div class="quote-widget">
+                    <div class="widget-header">
+                        <h3 data-en="Get Your Instant Quote" data-es="Obtenga su cotización instantánea">Get Your Instant Quote</h3>
+                        <p data-en="Start with just your ZIP code" data-es="Comience con solo su código postal">Start with just your ZIP code</p>
+                    </div>
+                    
+                    <form class="quote-form" id="quoteForm">
+                        <div class="form-step active" id="step1">
+                            <div class="input-group">
+                                <input type="text" id="zipCode" placeholder="Enter ZIP Code" data-en-placeholder="Enter ZIP Code" data-es-placeholder="Ingrese código postal" required maxlength="5" pattern="[0-9]{5}">
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    <span data-en="Continue" data-es="Continuar">Continue</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step2">
+                            <div class="input-group">
+                                <select id="insuranceType" required>
+                                    <option value="" data-en="Select Insurance Type" data-es="Seleccionar tipo de seguro">Select Insurance Type</option>
+                                    <option value="home" data-en="Homeowners Insurance" data-es="Seguro de propietarios">Homeowners Insurance</option>
+                                    <option value="auto" data-en="Auto Insurance" data-es="Seguro de auto">Auto Insurance</option>
+                                    <option value="flood" data-en="Flood Insurance" data-es="Seguro contra inundaciones">Flood Insurance</option>
+                                    <option value="business" data-en="Business Insurance" data-es="Seguro comercial">Business Insurance</option>
+                                </select>
+                                <button type="button" class="btn-next" onclick="nextStep()">
+                                    <span data-en="Continue" data-es="Continuar">Continue</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" id="step3">
+                            <div class="input-group">
+                                <input type="text" id="fullName" placeholder="Full Name" data-en-placeholder="Full Name" data-es-placeholder="Nombre completo" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="tel" id="phone" placeholder="Phone Number" data-en-placeholder="Phone Number" data-es-placeholder="Número de teléfono" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" placeholder="Email Address" data-en-placeholder="Email Address" data-es-placeholder="Correo electrónico" required>
+                            </div>
+                            <button type="submit" class="btn-submit">
+                                <span data-en="Get My Quote Now" data-es="Obtener mi cotización ahora">Get My Quote Now</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="widget-footer">
+                        <div class="trust-indicators">
+                            <div class="trust-item">
+                                <i class="fas fa-lock"></i>
+                                <span data-en="100% Secure" data-es="100% Seguro">100% Secure</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-clock"></i>
+                                <span data-en="2 Min Process" data-es="Proceso de 2 min">2 Min Process</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-ban"></i>
+                                <span data-en="No Spam" data-es="Sin spam">No Spam</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 data-en="Why Fern First When You've Been Turned Away?" data-es="¿Por qué Fern First cuando lo han rechazado?">
+                Why Fern First When You've Been Turned Away?
+            </h2>
+            
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 data-en="Specialists in Difficult Cases" data-es="Especialistas en casos difíciles">Specialists in Difficult Cases</h3>
+                    <p data-en="We work with carriers who specifically handle high-risk, non-standard, and hard-to-place insurance situations in Florida." data-es="Trabajamos con aseguradoras que manejan específicamente situaciones de alto riesgo, no estándar y difíciles de asegurar en Florida.">
+                        We work with carriers who specifically handle high-risk, non-standard, and hard-to-place insurance situations in Florida.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 data-en="Extensive Carrier Network" data-es="Amplia red de aseguradoras">Extensive Carrier Network</h3>
+                    <p data-en="Access to 50+ insurance carriers including surplus lines and specialty insurers that other agents don't work with." data-es="Acceso a más de 50 aseguradoras incluyendo líneas excedentes y aseguradoras especializadas con las que otros agentes no trabajan.">
+                        Access to 50+ insurance carriers including surplus lines and specialty insurers that other agents don't work with.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-hurricane"></i>
+                    </div>
+                    <h3 data-en="Florida Hurricane Experts" data-es="Expertos en huracanes de Florida">Florida Hurricane Experts</h3>
+                    <p data-en="Deep understanding of Florida's unique risks, coastal exposures, and post-storm insurance challenges." data-es="Comprensión profunda de los riesgos únicos de Florida, exposiciones costeras y desafíos de seguros post-tormenta.">
+                        Deep understanding of Florida's unique risks, coastal exposures, and post-storm insurance challenges.
+                    </p>
+                </div>
+
+                <div class="reason-card">
+                    <div class="reason-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 data-en="Personal Service Guarantee" data-es="Garantía de servicio personal">Personal Service Guarantee</h3>
+                    <p data-en="You'll work directly with a licensed agent who understands your situation - no call centers or automated responses." data-es="Trabajará directamente con un agente licenciado que entiende su situación - sin centros de llamadas o respuestas automatizadas.">
+                        You'll work directly with a licensed agent who understands your situation - no call centers or automated responses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <h2 data-en="What Our Clients Say" data-es="Lo que dicen nuestros clientes">What Our Clients Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p data-en="&quot;After 3 companies dropped me post-hurricane, Fern First found me coverage in 24 hours. They saved my mortgage!&quot;" data-es="&quot;Después de que 3 compañías me cancelaran post-huracán, Fern First me encontró cobertura en 24 horas. ¡Salvaron mi hipoteca!&quot;">
+                        "After 3 companies dropped me post-hurricane, Fern First found me coverage in 24 hours. They saved my mortgage!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Maria S.</strong> - Tampa, FL
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p data-en="&quot;Nobody else would touch my coastal property. Fern First not only found coverage but at a reasonable rate.&quot;" data-es="&quot;Nadie más quería tocar mi propiedad costera. Fern First no solo encontró cobertura sino a una tarifa razonable.&quot;">
+                        "Nobody else would touch my coastal property. Fern First not only found coverage but at a reasonable rate."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Robert K.</strong> - Miami Beach, FL
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p data-en="&quot;Professional, fast, and they actually care. Finally found an agency that fights for difficult cases.&quot;" data-es="&quot;Profesionales, rápidos, y realmente se preocupan. Finalmente encontré una agencia que lucha por casos difíciles.&quot;">
+                        "Professional, fast, and they actually care. Finally found an agency that fights for difficult cases."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Jennifer L.</strong> - Orlando, FL
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 data-en="Don't Wait - Your Coverage Gap Is Costing You" data-es="No espere - Su brecha de cobertura le está costando">
+                    Don't Wait - Your Coverage Gap Is Costing You
+                </h2>
+                <p data-en="Every day without insurance puts your assets at risk. Get a quote now and secure your coverage today." data-es="Cada día sin seguro pone sus activos en riesgo. Obtenga una cotización ahora y asegure su cobertura hoy.">
+                    Every day without insurance puts your assets at risk. Get a quote now and secure your coverage today.
+                </p>
+                
+                <div class="cta-buttons">
+                    <a href="tel:555-FERN-INS" class="cta-primary large">
+                        <i class="fas fa-phone"></i>
+                        <span data-en="Call Now: (555) FERN-INS" data-es="Llame ahora: (555) FERN-INS">Call Now: (555) FERN-INS</span>
+                    </a>
+                    <button class="cta-secondary large" onclick="scrollToQuote()">
+                        <i class="fas fa-calculator"></i>
+                        <span data-en="Get Online Quote" data-es="Obtener cotización en línea">Get Online Quote</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Fern First</h4>
+                    <p data-en="Licensed Florida Insurance Agency specializing in hard-to-place coverage." data-es="Agencia de seguros de Florida con licencia especializada en coberturas difíciles de conseguir.">
+                        Licensed Florida Insurance Agency specializing in hard-to-place coverage.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Contact" data-es="Contacto">Contact</h4>
+                    <p><i class="fas fa-phone"></i> (555) FERN-INS</p>
+                    <p><i class="fas fa-envelope"></i> info@fernfirstinsurance.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Florida Licensed Agent</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 data-en="Services" data-es="Servicios">Services</h4>
+                    <ul>
+                        <li data-en="Homeowners Insurance" data-es="Seguro de propietarios">Homeowners Insurance</li>
+                        <li data-en="Auto Insurance" data-es="Seguro de auto">Auto Insurance</li>
+                        <li data-en="Flood Insurance" data-es="Seguro contra inundaciones">Flood Insurance</li>
+                        <li data-en="Business Insurance" data-es="Seguro comercial">Business Insurance</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-en="© 2024 Fern First. All rights reserved. Licensed in Florida." data-es="© 2024 Fern First. Todos los derechos reservados. Con licencia en Florida.">
+                    © 2024 Fern First. All rights reserved. Licensed in Florida.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

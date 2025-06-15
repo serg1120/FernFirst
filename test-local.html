@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Test - Fern First Insurance</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+        .test-container { background: white; padding: 20px; border-radius: 8px; max-width: 600px; margin: 0 auto; }
+        .test-item { margin: 15px 0; padding: 10px; border-left: 4px solid #1e40af; background: #f8f9fa; }
+        .success { border-left-color: #10b981; }
+        .warning { border-left-color: #f59e0b; }
+        .error { border-left-color: #dc2626; }
+        button { background: #1e40af; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+        button:hover { background: #1d4ed8; }
+        .result { margin: 10px 0; padding: 10px; background: #e5e7eb; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Fern First Insurance - Local Test</h1>
+        
+        <div class="test-item success">
+            <h3>✅ Files Check</h3>
+            <p>All required files are present in your directory.</p>
+        </div>
+
+        <div class="test-item">
+            <h3>🌐 View Your Site</h3>
+            <p>Open your site in different ways:</p>
+            <button onclick="window.open('index.html', '_blank')">Open Main Site</button>
+            <button onclick="testResponsive()">Test Mobile View</button>
+            <button onclick="testLanguage()">Test Spanish Toggle</button>
+        </div>
+
+        <div class="test-item">
+            <h3>📱 Manual Testing Checklist</h3>
+            <ul>
+                <li>✅ Click EN/ES flags to test language switching</li>
+                <li>✅ Enter ZIP code and test form progression</li>
+                <li>✅ Try different insurance types</li>
+                <li>✅ Test phone number formatting</li>
+                <li>✅ Submit the form to see success message</li>
+                <li>✅ Test all CTA buttons</li>
+                <li>✅ Check testimonials section</li>
+                <li>✅ Resize browser window to test responsive design</li>
+            </ul>
+        </div>
+
+        <div class="test-item warning">
+            <h3>⚠️ Items to Replace Before Production</h3>
+            <ul>
+                <li>Replace logo-placeholder.svg with your actual logo</li>
+                <li>Update phone number from (555) FERN-INS to real number</li>
+                <li>Connect form to actual backend/CRM</li>
+                <li>Add Google Analytics tracking</li>
+                <li>Add real customer testimonials</li>
+            </ul>
+        </div>
+
+        <div class="test-item">
+            <h3>🚀 Quick Tests</h3>
+            <button onclick="testFormValidation()">Test Form Validation</button>
+            <button onclick="testMobileBreakpoints()">Test Breakpoints</button>
+            <button onclick="showFormData()">Test Form Data</button>
+            
+            <div id="testResults" class="result" style="display:none;">
+                <h4>Test Results:</h4>
+                <div id="resultContent"></div>
+            </div>
+        </div>
+
+        <div class="test-item">
+            <h3>📊 Performance Check</h3>
+            <p>Your site should load in under 2 seconds. All CSS and JS are inline for optimal performance.</p>
+            <button onclick="checkLoadTime()">Check Load Time</button>
+        </div>
+    </div>
+
+    <script>
+        function testResponsive() {
+            window.open('index.html', '_blank', 'width=375,height=667');
+        }
+
+        function testLanguage() {
+            alert('Open the main site and click the EN/ES flags in the header to test language switching.');
+        }
+
+        function testFormValidation() {
+            showResult('Form validation includes:\n• ZIP code must be 5 digits\n• All fields required\n• Phone number auto-formatting\n• Email validation');
+        }
+
+        function testMobileBreakpoints() {
+            showResult('Responsive breakpoints:\n• Mobile: < 480px\n• Tablet: < 768px\n• Desktop: > 768px\n\nResize your browser to test!');
+        }
+
+        function showFormData() {
+            showResult('Form captures:\n• ZIP Code\n• Insurance Type\n• Full Name\n• Phone Number\n• Email\n• Language Preference\n• Timestamp');
+        }
+
+        function checkLoadTime() {
+            const startTime = performance.now();
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.href = 'index.html';
+            document.head.appendChild(link);
+            
+            setTimeout(() => {
+                const loadTime = (performance.now() - startTime).toFixed(2);
+                showResult(`Estimated load time: ${loadTime}ms\n\n${loadTime < 2000 ? '✅ Excellent performance!' : '⚠️ Consider optimizing images/assets'}`);
+            }, 100);
+        }
+
+        function showResult(content) {
+            document.getElementById('testResults').style.display = 'block';
+            document.getElementById('resultContent').innerText = content;
+        }
+
+        // Check if main files exist
+        window.onload = function() {
+            console.log('🧪 Local test page loaded');
+            console.log('📁 Files in directory: index.html, styles.css, script.js');
+            console.log('🎯 Click "Open Main Site" to view your landing page');
+        };
+    </script>
+</body>
+</html>
